@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <MainTest msg="Father"/>
+    <VxeTest></VxeTest>
   </div>
 </template>
 
 <script>
-import MainTest from './components/MainTest.vue'
+import VxeTest from "@/components/VxeTest";
 
 export default {
   name: 'App',
   components: {
-    MainTest
+    VxeTest
   }
 }
 </script>

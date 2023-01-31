@@ -1,20 +1,45 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-
+  <div>
+    <h1>Date Test</h1>
+    <Row>
+      <DatePicker
+          type="date"
+          v-model="searchDate"
+          @on-change="searchDateChange"
+          placeholder="选择查询日期"
+          :clearable="false"
+      >
+      </DatePicker>
+      <Input  style="margin-left: 20px;width: 320px" v-model="searchDate"></Input>
+      <Button type="primary" @click="doSearch" style="margin-left: 20px">查询</Button>
+    </Row>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
+  name: 'MainTest',
+  data(){
+    return{
+      searchDate:'2022-11-01'
+    }
+  },
+  mounted(){
+
+  },
+  methods:{
+    searchDateChange(value){
+      this.searchDate = value
+      console.log(this.searchDate)
+    },
+    doSearch(){
+      this.$Message.info(this.searchDate+'');
+      console.log(this.searchDate)
+    }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
   margin: 40px 0 0;
